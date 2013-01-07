@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require 'socket'
 
-class YourSecondSocket < MiniTest::Unit::TestCase
+class Chapter3SocketTest < MiniTest::Unit::TestCase
   def test_socket_bind
     socket = Socket.new(:INET, :STREAM)
     addr = Socket.pack_sockaddr_in(4481, '0.0.0.0')
@@ -11,5 +11,15 @@ class YourSecondSocket < MiniTest::Unit::TestCase
     assert_raises Errno::EADDRINUSE do
       Socket.new(:INET, :STREAM).bind(addr)
     end
+  end
+
+  def test_socket_listen
+  	socket = Socket.new(:INET, :STREAM)
+  	addr = Socket.pack_sockaddr_in(4482, '0.0.0.0')
+  	socket.bind(addr)
+  	socket.listen(5)
+
+    # Nothing came up
+
   end
 end

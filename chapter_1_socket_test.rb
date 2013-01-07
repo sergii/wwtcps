@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require 'socket'
 
-class YourFirstSocketTest < MiniTest::Unit::TestCase
+class Chapter1SocketTest < MiniTest::Unit::TestCase
   def test_socket_inspect
     socket = Socket.new(Socket::AF_INET, Socket::SOCK_STREAM)
 
